@@ -42,7 +42,7 @@ export const Footer = styled.section`
   }
 
   button {
-    background: #ff872c;
+    background: #89bd22;
     color: #fff;
     border-radius: 5px;
     padding: 15px 80px;
@@ -50,7 +50,7 @@ export const Footer = styled.section`
     transition: background-color 0.2s;
 
     &:hover {
-      background: ${shade(0.2, '#ff872c')};
+      background: ${shade(0.2, '#89BD22')};
     }
   }
 `;
