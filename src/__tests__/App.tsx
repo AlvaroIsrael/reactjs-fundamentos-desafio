@@ -22,7 +22,7 @@ jest.mock('../utils/formatValue.ts', () => ({
 }));
 
 import React from 'react';
-import { render, fireEvent, act } from '@testing-library/react';
+import {render, fireEvent, act} from '@testing-library/react';
 import MockAdapter from 'axios-mock-adapter';
 import api from '../services/api';
 import App from '../App';
@@ -41,7 +41,7 @@ const actWait = async (amount = 0): Promise<void> => {
 
 describe('Dashboard', () => {
   it('should be able to list the total balance inside the cards', async () => {
-    const { getByTestId } = render(<App />);
+    const {getByTestId} = render(<App />);
 
     apiMock.onGet('transactions').reply(200, {
       transactions: [
@@ -108,7 +108,7 @@ describe('Dashboard', () => {
   });
 
   it('should be able to list the transactions', async () => {
-    const { getByText } = render(<App />);
+    const {getByText} = render(<App />);
 
     apiMock.onGet('transactions').reply(200, {
       transactions: [
@@ -181,7 +181,7 @@ describe('Dashboard', () => {
   });
 
   it('should be able to navigate to the import page', async () => {
-    const { getByText } = render(<App />);
+    const {getByText} = render(<App />);
 
     await actWait(500);
 
@@ -193,7 +193,7 @@ describe('Dashboard', () => {
   });
 
   test('should be able to upload a file', async () => {
-    const { getByText, getByTestId } = render(<App />);
+    const {getByText, getByTestId} = render(<App />);
 
     fireEvent.click(getByText('Importar'));
 
