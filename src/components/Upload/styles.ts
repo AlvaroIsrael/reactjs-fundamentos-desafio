@@ -1,10 +1,12 @@
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
+import styled, {css, FlattenSimpleInterpolation} from 'styled-components';
 
 interface UploadProps {
   isDragActive: boolean;
   isDragReject: boolean;
   refKey?: string;
+
   [key: string]: any;
+
   type?: 'error' | 'success' | 'default';
 }
 
@@ -26,10 +28,10 @@ export const DropContainer = styled.div.attrs({
   transition: height 0.2s ease;
 
   ${(props: UploadProps): false | FlattenSimpleInterpolation =>
-    props.isDragActive && dragActive}
+  props.isDragActive && dragActive}
 
   ${(props: UploadProps): false | FlattenSimpleInterpolation =>
-    props.isDragReject && dragReject}
+  props.isDragReject && dragReject}
 `;
 
 const messageColors = {
@@ -44,7 +46,7 @@ export const UploadMessage = styled.p`
   line-height: 24px;
   padding: 48px 0;
 
-  color: ${({ type }: UploadProps) => messageColors[type || 'default']};
+  color: ${({type}: UploadProps) => messageColors[type || 'default']};
 
   justify-content: center;
   align-items: center;
