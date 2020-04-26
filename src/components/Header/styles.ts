@@ -5,6 +5,10 @@ interface ContainerProps {
 }
 
 export const Container = styled.div<ContainerProps>`
+  .selected {
+    border-bottom: 2px solid #89bd22;
+  }
+
   background: #3d3d3d;
   padding: 30px 0;
 
@@ -17,11 +21,30 @@ export const Container = styled.div<ContainerProps>`
     justify-content: space-between;
 
     nav {
+      display: flex;
+      align-items: center;
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 40px;
+
+        img {
+          height: 24px;
+          width: 24px;
+          margin-right: 12px;
+        }
+        &:hover {
+          border-bottom: 2px solid #89bd22;
+        }
+      }
       a {
         color: #fff;
         text-decoration: none;
         font-size: 16px;
         transition: opacity 0.2s;
+        align-items: center;
 
         & + a {
           margin-left: 32px;

@@ -1,7 +1,8 @@
-const formatValue = (value: number, valueType: string): string => {
-  return valueType === 'outcome'
-    ? `- R$ ${value.toString().replace('.', ',')}`
-    : `R$ ${value.toString().replace('.', ',')}`;
+const formatValue = (value: number): string => {
+  return Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  }).format(value);
 };
 
 export default formatValue;
