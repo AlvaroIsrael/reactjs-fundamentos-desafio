@@ -59,7 +59,7 @@ const Dashboard: React.FC = () => {
       setBalance(balanceFormatted);
     }
 
-    loadTransactions();
+    loadTransactions().finally();
   }, []);
 
   return (
